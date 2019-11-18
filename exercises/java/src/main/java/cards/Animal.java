@@ -1,6 +1,6 @@
 package cards;
 
-enum Animal {
+enum Animal implements ValueService {
     AARDVARK,
     BABOON,
     CAMEL,
@@ -26,5 +26,10 @@ enum Animal {
     WHALE,
     X_RAY_TETRA,
     YAK,
-    ZEBRA
+    ZEBRA;
+
+    @Override
+    public ValueService getValue() {
+        return this;
+    }
 }

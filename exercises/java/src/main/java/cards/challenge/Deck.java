@@ -9,24 +9,24 @@ import java.util.List;
 
 public class Deck implements DeckService {
 
-    private List<Card> cards;
+    private List<PlayingCard> cards;
 
-    public Deck(List<Card> cards) {
+    public Deck(List<PlayingCard> cards) {
         this.cards = cards;
     }
 
     public Deck() {}
 
 
-    public void setCards(List<Card> cards) {
+    public void setCards(List<PlayingCard> cards) {
         this.cards = cards;
     }
 
-    public List<Card> getAllCards() {
+    public List<PlayingCard> getAllCards() {
         return cards;
     }
 
-    public void addCard(Card card) {
+    public void addCard(PlayingCard card) {
         this.cards.add(card);
     }
 
@@ -34,24 +34,24 @@ public class Deck implements DeckService {
     public Deck generateNewDeck() {
 
         // there are 4 suits, each of them holding all of the cards for that suit
-        List<Card> allCards = new ArrayList<>();
+        List<PlayingCard> allCards = new ArrayList<>();
         for (int i = 0; i < CardConfig.NUMBER_OF_SUITS; i++) {
             Suits currentSuit = Suits.convertNumberToSuit(i);
             Suit suit = new Suit(currentSuit);
-            List<Card> cardsForSuit = generateCardsForSuit(suit);
+            List<PlayingCard> cardsForSuit = generateCardsForSuit(suit);
             allCards.addAll(cardsForSuit);
         }
 
         return new Deck(allCards);
     }
 
-    private List<Card> generateCardsForSuit(Suit suit) {
+    private List<PlayingCard> generateCardsForSuit(Suit suit) {
 
-        List<Card> cards = new ArrayList<>();
+        List<PlayingCard> cards = new ArrayList<>();
 
         for (int i = 1; i < CardConfig.NUMBER_OF_CARDS_IN_SUIT; i++) {
             FaceValue cardValue = new FaceValue(i);
-            Card newestCard = new Card(cardValue, suit);
+            PlayingCard newestCard = new PlayingCard(cardValue, suit);
             cards.add(newestCard);
         }
 
@@ -68,7 +68,7 @@ public class Deck implements DeckService {
     public String[] getCards() {
         String[] result = new String[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
-            Card card = cards.get(i);
+            PlayingCard card = cards.get(i);
             result[i] = card.toString();
         }
         return result;

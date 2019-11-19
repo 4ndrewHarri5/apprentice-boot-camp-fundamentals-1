@@ -3,12 +3,12 @@ package cards.challenge;
 import cards.CardService;
 import cards.ValueService;
 
-public class Card implements CardService {
+public class PlayingCard implements CardService {
 
     private final FaceValue value;
     private final Suit suit;
 
-    public Card(FaceValue value, Suit suit) {
+    public PlayingCard(FaceValue value, Suit suit) {
         this.value = value;
         this.suit = suit;
     }

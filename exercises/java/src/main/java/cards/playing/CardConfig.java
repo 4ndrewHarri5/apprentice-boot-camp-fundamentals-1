@@ -1,4 +1,4 @@
-package cards.challenge;
+package cards.playing;
 
 public class CardConfig {
 

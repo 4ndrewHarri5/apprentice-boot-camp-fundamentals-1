@@ -1,6 +1,5 @@
-package cards.challenge;
+package cards.playing;
 
-import cards.AnimalCard;
 import cards.Card;
 import cards.Deck;
 
@@ -19,22 +18,7 @@ public class PlayingDeck implements Deck {
 
     public PlayingDeck() {}
 
-    public void setCards(List<PlayingCard> cards) {
-        cards = new ArrayList<>();
-        this.cards.addAll(cards);
-    }
-
-    public List<PlayingCard> getAllCards() {
-        return cards;
-    }
-
-    public void addCard(PlayingCard card) {
-        this.cards.add(card);
-    }
-
-
-    public PlayingDeck generateNewDeck() {
-
+    public static PlayingDeck generateNewDeck() {
         // there are 4 suits, each of them holding all of the cards for that suit
         List<PlayingCard> allCards = new ArrayList<>();
         for (int i = 0; i < CardConfig.NUMBER_OF_SUITS; i++) {
@@ -47,7 +31,7 @@ public class PlayingDeck implements Deck {
         return new PlayingDeck(allCards);
     }
 
-    private List<PlayingCard> generateCardsForSuit(Suit suit) {
+    private static List<PlayingCard> generateCardsForSuit(Suit suit) {
 
         List<PlayingCard> cards = new ArrayList<>();
 
@@ -58,6 +42,19 @@ public class PlayingDeck implements Deck {
         }
 
         return cards;
+    }
+
+    public void setCards(List<PlayingCard> cards) {
+        cards = new ArrayList<>();
+        this.cards.addAll(cards);
+    }
+
+    public List<PlayingCard> getAllCards() {
+        return cards;
+    }
+
+    public void addCard(PlayingCard card) {
+        this.cards.add(card);
     }
 
     public void outputCards() {

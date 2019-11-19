@@ -1,14 +1,17 @@
-package cards;
+package cards.animal;
+
+import cards.Card;
+import cards.Deck;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class AnimalDeck implements Deck {
+public class AnimalDeck implements Deck {
 
     private List<Card> cards;
 
-    AnimalDeck() {
+    public AnimalDeck() {
         cards = new ArrayList<>();
         for (Animal animal : Animal.values()) {
             cards.add(new AnimalCard(animal));

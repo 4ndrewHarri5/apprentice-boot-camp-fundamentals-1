@@ -1,4 +1,7 @@
-package cards;
+package cards.animal;
+
+import cards.Card;
+import cards.Value;
 
 public class AnimalCard implements Card {
 

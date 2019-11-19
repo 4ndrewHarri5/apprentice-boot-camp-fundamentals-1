@@ -1,4 +1,4 @@
-package cards.challenge;
+package cards.playing;
 import cards.Value;
 
 public class FaceValue implements Value {

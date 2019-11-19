@@ -1,4 +1,4 @@
-package cards.challenge;
+package cards.playing;
 
 import cards.Card;
 import cards.Value;

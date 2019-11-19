@@ -1,4 +1,5 @@
-package cards;
+package cards.animal;
+import cards.Value;
 
 enum Animal implements Value {
     AARDVARK,

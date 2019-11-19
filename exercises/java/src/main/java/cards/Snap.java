@@ -1,6 +1,7 @@
 package cards;
 
-import cards.challenge.PlayingDeck;
+import cards.animal.AnimalDeck;
+import cards.playing.PlayingDeck;
 import cards.superdeck.SuperDeck;
 
 import java.util.Arrays;
@@ -17,12 +18,11 @@ class Snap {
     }
 
     public static void main(String[] args) {
-        PlayingDeck newDeck = new PlayingDeck();
-        PlayingDeck deck = newDeck.generateNewDeck();
+
+        PlayingDeck playingDeck = PlayingDeck.generateNewDeck();
         AnimalDeck animalDeck = new AnimalDeck();
 
-
-        SuperDeck superDeck = new SuperDeck(Arrays.asList(deck, animalDeck));
+        SuperDeck superDeck = new SuperDeck(Arrays.asList(playingDeck, animalDeck));
 
         Snap snap = new Snap(superDeck);
         snap.play();

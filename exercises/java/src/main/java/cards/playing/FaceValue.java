@@ -1,17 +1,11 @@
 package cards.playing;
-import cards.Value;
 
-public class FaceValue implements Value {
+public class FaceValue {
 
     private Integer value;
 
     public FaceValue(Integer value) {
         this.value = value;
-    }
-
-    @Override
-    public String getValue() {
-        return this.convertValueToString();
     }
 
     private String convertValueToString() {

@@ -1,6 +1,6 @@
 package cards;
 
-public interface Card {
-    boolean snap(Card otherCard);
-    Value getValue();
+public abstract class Card {
+    public abstract boolean snap(Card otherCard);
+    public abstract String getValue();
 }

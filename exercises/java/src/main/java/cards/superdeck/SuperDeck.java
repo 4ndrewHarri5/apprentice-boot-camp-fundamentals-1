@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SuperDeck implements Deck {
+public class SuperDeck extends Deck {
 
     private List<Card> cards;
 
@@ -30,4 +30,6 @@ public class SuperDeck implements Deck {
     public Card deal() {
         return cards.remove(0);
     }
+
+
 }

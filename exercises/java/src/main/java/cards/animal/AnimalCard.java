@@ -1,9 +1,8 @@
 package cards.animal;
 
 import cards.Card;
-import cards.Value;
 
-public class AnimalCard implements Card {
+public class AnimalCard extends Card {
 
     private final Animal animal;
 
@@ -13,12 +12,12 @@ public class AnimalCard implements Card {
 
     @Override
     public boolean snap(Card otherCard){
-        return otherCard instanceof AnimalCard && this.animal.equals(otherCard.getValue());
+        return otherCard instanceof AnimalCard && this.animal.toString().equals(otherCard.getValue());
     }
 
     @Override
-    public Value getValue() {
-        return this.animal;
+    public String getValue() {
+        return this.animal.toString();
     }
 
     @Override

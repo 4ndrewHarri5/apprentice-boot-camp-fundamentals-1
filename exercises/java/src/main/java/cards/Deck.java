@@ -2,10 +2,10 @@ package cards;
 
 import java.util.List;
 
-public interface Deck {
+public abstract class Deck {
 
-    List<Card> getCards();
-    void shuffle();
-    Card deal();
+    public abstract List<Card> getCards();
+    public abstract void shuffle();
+    public abstract Card deal();
 
 }

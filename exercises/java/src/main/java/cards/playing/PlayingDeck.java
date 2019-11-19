@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class PlayingDeck implements Deck {
+public class PlayingDeck extends Deck {
 
     private List<PlayingCard> cards;
 
@@ -15,8 +15,6 @@ public class PlayingDeck implements Deck {
         this.cards = new ArrayList<>();
         this.cards.addAll(cards);
     }
-
-    public PlayingDeck() {}
 
     public static PlayingDeck generateNewDeck() {
         // there are 4 suits, each of them holding all of the cards for that suit
@@ -59,7 +57,7 @@ public class PlayingDeck implements Deck {
 
     public void outputCards() {
         cards.forEach(card -> {
-            System.out.println(card.getValue().getValue() + " of " + card.getSuit().getSuit().getName());
+            System.out.println(card.getValue() + " of " + card.getSuit().getSuit().getName());
         });
     }
 

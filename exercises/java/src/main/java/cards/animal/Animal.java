@@ -1,7 +1,6 @@
 package cards.animal;
-import cards.Value;
 
-enum Animal implements Value {
+enum Animal {
     AARDVARK,
     BABOON,
     CAMEL,
@@ -28,10 +27,4 @@ enum Animal implements Value {
     X_RAY_TETRA,
     YAK,
     ZEBRA;
-
-    @Override
-    public String getValue() {
-        return this.toString();
-    }
-
 }

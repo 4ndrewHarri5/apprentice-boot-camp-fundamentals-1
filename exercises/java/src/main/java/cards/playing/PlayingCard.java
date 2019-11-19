@@ -1,9 +1,8 @@
 package cards.playing;
 
 import cards.Card;
-import cards.Value;
 
-public class PlayingCard implements Card {
+public class PlayingCard extends Card {
 
     private final FaceValue value;
     private final Suit suit;
@@ -13,8 +12,8 @@ public class PlayingCard implements Card {
         this.suit = suit;
     }
 
-    public Value getValue() {
-        return value;
+    public String getValue() {
+        return value.toString();
     }
 
     public Suit getSuit() {
@@ -23,7 +22,7 @@ public class PlayingCard implements Card {
 
     @Override
     public boolean snap(Card otherCard) {
-        return otherCard instanceof PlayingCard && this.getValue().getValue().equals(otherCard.getValue().getValue());
+        return otherCard instanceof PlayingCard && this.getValue().equals(otherCard.getValue());
     }
 
     @Override

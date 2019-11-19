@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class AnimalDeck implements Deck {
+public class AnimalDeck extends Deck {
 
     private List<Card> cards;
 

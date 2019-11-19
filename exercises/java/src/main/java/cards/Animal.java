@@ -1,5 +1,7 @@
 package cards;
 
+import cards.challenge.FaceValue;
+
 enum Animal implements ValueService {
     AARDVARK,
     BABOON,
@@ -29,7 +31,8 @@ enum Animal implements ValueService {
     ZEBRA;
 
     @Override
-    public ValueService getValue() {
-        return this;
+    public String getValue() {
+        return this.toString();
     }
+
 }

@@ -2,7 +2,7 @@ package cards.challenge;
 
 import cards.ValueService;
 
-public class FaceValue implements Value, ValueService {
+public class FaceValue implements ValueService {
 
     private Integer value;
 
@@ -11,18 +11,8 @@ public class FaceValue implements Value, ValueService {
     }
 
     @Override
-    public String getTheValue() {
-        return convertValueToString();
-    }
-
-    @Override
-    public FaceValue getFaceValue() {
-        return this;
-    }
-
-    @Override
-    public ValueService getValue() {
-        return this;
+    public String getValue() {
+        return this.convertValueToString();
     }
 
     private String convertValueToString() {
@@ -38,8 +28,6 @@ public class FaceValue implements Value, ValueService {
 
     @Override
     public String toString() {
-        return "FaceValue{" +
-                "value=" + value +
-                '}';
+        return convertValueToString();
     }
 }

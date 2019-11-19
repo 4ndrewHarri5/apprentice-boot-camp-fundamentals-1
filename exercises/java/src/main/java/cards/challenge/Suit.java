@@ -14,8 +14,6 @@ public class Suit {
 
     @Override
     public String toString() {
-        return "Suit{" +
-                "suit=" + suit.getName() +
-                '}';
+        return suit.getName();
     }
 }

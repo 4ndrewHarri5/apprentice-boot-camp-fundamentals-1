@@ -1,7 +1,5 @@
 package cards;
 
 public interface ValueService {
-
-    ValueService getValue();
-
+    String getValue();
 }

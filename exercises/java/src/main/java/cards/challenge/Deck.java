@@ -6,7 +6,6 @@ import cards.DeckService;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Deck implements DeckService {
 
@@ -32,7 +31,6 @@ public class Deck implements DeckService {
     }
 
 
-
     public Deck generateNewDeck() {
 
         // there are 4 suits, each of them holding all of the cards for that suit
@@ -52,7 +50,7 @@ public class Deck implements DeckService {
         List<Card> cards = new ArrayList<>();
 
         for (int i = 1; i < CardConfig.NUMBER_OF_CARDS_IN_SUIT; i++) {
-            Value cardValue = new FaceValue(i);
+            FaceValue cardValue = new FaceValue(i);
             Card newestCard = new Card(cardValue, suit);
             cards.add(newestCard);
         }
@@ -61,11 +59,9 @@ public class Deck implements DeckService {
     }
 
     public void outputCards() {
-
         cards.forEach(card -> {
             System.out.println(card.getValue().getValue() + " of " + card.getSuit().getSuit().getName());
         });
-
     }
 
     @Override

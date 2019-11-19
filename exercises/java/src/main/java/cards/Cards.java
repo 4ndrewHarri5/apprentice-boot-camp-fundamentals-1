@@ -1,7 +1,5 @@
 package cards;
 
-import cards.challenge.Deck;
-
 public class Cards {
     public static void main(String[] args) {
 

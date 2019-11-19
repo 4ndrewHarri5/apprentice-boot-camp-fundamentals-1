@@ -1,25 +1,27 @@
 package cards.challenge;
 
-import cards.CardService;
-import cards.DeckService;
+import cards.AnimalCard;
+import cards.Card;
+import cards.Deck;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Deck implements DeckService {
+public class PlayingDeck implements Deck {
 
     private List<PlayingCard> cards;
 
-    public Deck(List<PlayingCard> cards) {
-        this.cards = cards;
+    public PlayingDeck(List<PlayingCard> cards) {
+        this.cards = new ArrayList<>();
+        this.cards.addAll(cards);
     }
 
-    public Deck() {}
-
+    public PlayingDeck() {}
 
     public void setCards(List<PlayingCard> cards) {
-        this.cards = cards;
+        cards = new ArrayList<>();
+        this.cards.addAll(cards);
     }
 
     public List<PlayingCard> getAllCards() {
@@ -31,7 +33,7 @@ public class Deck implements DeckService {
     }
 
 
-    public Deck generateNewDeck() {
+    public PlayingDeck generateNewDeck() {
 
         // there are 4 suits, each of them holding all of the cards for that suit
         List<PlayingCard> allCards = new ArrayList<>();
@@ -42,7 +44,7 @@ public class Deck implements DeckService {
             allCards.addAll(cardsForSuit);
         }
 
-        return new Deck(allCards);
+        return new PlayingDeck(allCards);
     }
 
     private List<PlayingCard> generateCardsForSuit(Suit suit) {
@@ -65,13 +67,8 @@ public class Deck implements DeckService {
     }
 
     @Override
-    public String[] getCards() {
-        String[] result = new String[cards.size()];
-        for (int i = 0; i < cards.size(); i++) {
-            PlayingCard card = cards.get(i);
-            result[i] = card.toString();
-        }
-        return result;
+    public List<Card> getCards() {
+        return new ArrayList<>(cards);
     }
 
     @Override
@@ -80,7 +77,7 @@ public class Deck implements DeckService {
     }
 
     @Override
-    public CardService deal() {
+    public Card deal() {
         return cards.remove(0);
     }
 

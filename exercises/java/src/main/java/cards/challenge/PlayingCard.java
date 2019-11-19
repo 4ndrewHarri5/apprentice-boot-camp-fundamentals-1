@@ -1,9 +1,9 @@
 package cards.challenge;
 
-import cards.CardService;
-import cards.ValueService;
+import cards.Card;
+import cards.Value;
 
-public class PlayingCard implements CardService {
+public class PlayingCard implements Card {
 
     private final FaceValue value;
     private final Suit suit;
@@ -13,7 +13,7 @@ public class PlayingCard implements CardService {
         this.suit = suit;
     }
 
-    public ValueService getValue() {
+    public Value getValue() {
         return value;
     }
 
@@ -22,7 +22,7 @@ public class PlayingCard implements CardService {
     }
 
     @Override
-    public boolean snap(CardService otherCard) {
+    public boolean snap(Card otherCard) {
         return otherCard != null && this.getValue().getValue().equals(otherCard.getValue().getValue());
     }
 

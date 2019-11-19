@@ -1,33 +1,39 @@
 package cards;
 
-import cards.challenge.Deck;
+import cards.challenge.PlayingDeck;
+import cards.superdeck.SuperDeck;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Snap {
     private int player1Score;
     private int player2Score;
-    private DeckService deck;
+    private Deck deck;
 
-    Snap(DeckService deck) {
+    Snap(Deck deck) {
         this.deck = deck;
         deck.shuffle();
     }
 
     public static void main(String[] args) {
-        Deck newDeck = new Deck();
-        Deck deck = newDeck.generateNewDeck();
+        PlayingDeck newDeck = new PlayingDeck();
+        PlayingDeck deck = newDeck.generateNewDeck();
         AnimalDeck animalDeck = new AnimalDeck();
-        Snap snap = new Snap(deck);
+
+
+        SuperDeck superDeck = new SuperDeck(Arrays.asList(deck, animalDeck));
+
+        Snap snap = new Snap(superDeck);
         snap.play();
     }
 
     void play() {
         Scanner scanner = new Scanner(System.in);
 
-        CardService previousCard = null;
-        while (deck.getCards().length > 0) {
-            CardService currentCard = deck.deal();
+        Card previousCard = null;
+        while (deck.getCards().size() > 0) {
+            Card currentCard = deck.deal();
             System.out.println(currentCard);
             String input = scanner.nextLine();
             if (input.length() > 0 && input.charAt(0) == 'a') {

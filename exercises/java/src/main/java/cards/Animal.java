@@ -1,8 +1,6 @@
 package cards;
 
-import cards.challenge.FaceValue;
-
-enum Animal implements ValueService {
+enum Animal implements Value {
     AARDVARK,
     BABOON,
     CAMEL,

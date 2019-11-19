@@ -1,8 +1,7 @@
 package cards.challenge;
+import cards.Value;
 
-import cards.ValueService;
-
-public class FaceValue implements ValueService {
+public class FaceValue implements Value {
 
     private Integer value;
 

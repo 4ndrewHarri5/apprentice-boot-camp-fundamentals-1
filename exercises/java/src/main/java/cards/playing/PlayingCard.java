@@ -23,7 +23,7 @@ public class PlayingCard implements Card {
 
     @Override
     public boolean snap(Card otherCard) {
-        return otherCard != null && this.getValue().getValue().equals(otherCard.getValue().getValue());
+        return otherCard instanceof PlayingCard && this.getValue().getValue().equals(otherCard.getValue().getValue());
     }
 
     @Override

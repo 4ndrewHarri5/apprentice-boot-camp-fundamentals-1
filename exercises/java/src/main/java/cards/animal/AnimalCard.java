@@ -13,7 +13,7 @@ public class AnimalCard implements Card {
 
     @Override
     public boolean snap(Card otherCard){
-        return otherCard != null && this.animal.equals(otherCard.getValue());
+        return otherCard instanceof AnimalCard && this.animal.equals(otherCard.getValue());
     }
 
     @Override

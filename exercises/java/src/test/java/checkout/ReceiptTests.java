@@ -50,4 +50,38 @@ public class ReceiptTests {
                 "B: 30 - 15 (2 for 45)\n",
                 "Total: 210");
     }
+
+    @Test
+    public void scannedC4Times() {
+
+        Checkout checkout = new Checkout();
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        assertThat(checkout.receipt()).containsSequence(
+                "C: 20\n",
+                "C: 20\n",
+                "C: 20\n",
+                "C: 20 - 10 (4 for 70)");
+
+    }
+
+    @Test
+    public void scannedD5Times() {
+
+        Checkout checkout = new Checkout();
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        assertThat(checkout.receipt()).containsSequence(
+                "D: 15\n",
+                "D: 15\n",
+                "D: 15\n",
+                "D: 15\n",
+                "D: 15 - 15 (5 for 60)");
+
+    }
 }

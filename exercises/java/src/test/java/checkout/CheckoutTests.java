@@ -132,4 +132,67 @@ public class CheckoutTests {
         checkout.scan("C");
         assertThat(checkout.total()).isEqualTo(310);
     }
+
+    @Test
+    public void threeC() {
+        Checkout checkout = new Checkout();
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        assertThat(checkout.total()).isEqualTo(60);
+    }
+
+    @Test
+    public void fourC() {
+        Checkout checkout = new Checkout();
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        assertThat(checkout.total()).isEqualTo(70);
+    }
+
+    @Test
+    public void fiveC() {
+        Checkout checkout = new Checkout();
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        checkout.scan("C");
+        assertThat(checkout.total()).isEqualTo(90);
+    }
+
+    @Test
+    public void fourD() {
+        Checkout checkout = new Checkout();
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        assertThat(checkout.total()).isEqualTo(60);
+    }
+
+    @Test
+    public void fiveD() {
+        Checkout checkout = new Checkout();
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        assertThat(checkout.total()).isEqualTo(60);
+    }
+
+    @Test
+    public void sixD() {
+        Checkout checkout = new Checkout();
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        checkout.scan("D");
+        assertThat(checkout.total()).isEqualTo(75);
+    }
 }
